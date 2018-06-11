@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/hcs-xph">
-  <title>Drawable����(һ)--StateListDrawable(ѡ����)�����÷� | aaron的技术博客</title>
+  <title>Drawable子类(一)--StateListDrawable(选择器)基本用法 | aaron的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="�ܶ�ʱ�������ڿ���ʱ��������Button��TextView���ò�ͬ״̬�µı�������������ɫ��ͨ����������������������뵽������дһ��Selector���ǵģ�дһ��selector�Ǻܷ��㣬����ͬ������ʽ�����Ը��á�����������Ҫ���ܵ�����ôʹ�ô������ʽ������ѡ������Ҳ">
-<meta name="keywords" content="Drawable,ѡ����">
+  <meta name="description" content="很多时候我们在开发时会遇到给Button、TextView设置不同状态下的背景或者字体颜色。通常遇到这种情况我们首先想到的就是写一个Selector。是的，写一个selector是很方便，遇到同样的样式还可以复用。不过这里我要介绍的是怎么使用代码的形式来设置选择器，也就是接下来要讲的StateListDrawable使用。">
+<meta name="keywords" content="Drawable,选择器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Drawable����(һ)--StateListDrawable(ѡ����)�����÷�">
+<meta property="og:title" content="Drawable子类(一)--StateListDrawable(选择器)基本用法">
 <meta property="og:url" content="https://github.com/hcs-xph/2017/10/15/drawable/index.html">
 <meta property="og:site_name" content="aaron的技术博客">
-<meta property="og:description" content="�ܶ�ʱ�������ڿ���ʱ��������Button��TextView���ò�ͬ״̬�µı�������������ɫ��ͨ����������������������뵽������дһ��Selector���ǵģ�дһ��selector�Ǻܷ��㣬����ͬ������ʽ�����Ը��á�����������Ҫ���ܵ�����ôʹ�ô������ʽ������ѡ������Ҳ">
-<meta property="og:updated_time" content="2017-10-15T12:17:04.977Z">
+<meta property="og:description" content="很多时候我们在开发时会遇到给Button、TextView设置不同状态下的背景或者字体颜色。通常遇到这种情况我们首先想到的就是写一个Selector。是的，写一个selector是很方便，遇到同样的样式还可以复用。不过这里我要介绍的是怎么使用代码的形式来设置选择器，也就是接下来要讲的StateListDrawable使用。">
+<meta property="og:updated_time" content="2018-06-11T08:58:42.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Drawable����(һ)--StateListDrawable(ѡ����)�����÷�">
-<meta name="twitter:description" content="�ܶ�ʱ�������ڿ���ʱ��������Button��TextView���ò�ͬ״̬�µı�������������ɫ��ͨ����������������������뵽������дһ��Selector���ǵģ�дһ��selector�Ǻܷ��㣬����ͬ������ʽ�����Ը��á�����������Ҫ���ܵ�����ôʹ�ô������ʽ������ѡ������Ҳ">
+<meta name="twitter:title" content="Drawable子类(一)--StateListDrawable(选择器)基本用法">
+<meta name="twitter:description" content="很多时候我们在开发时会遇到给Button、TextView设置不同状态下的背景或者字体颜色。通常遇到这种情况我们首先想到的就是写一个Selector。是的，写一个selector是很方便，遇到同样的样式还可以复用。不过这里我要介绍的是怎么使用代码的形式来设置选择器，也就是接下来要讲的StateListDrawable使用。">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -161,7 +161,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Drawable����(һ)--StateListDrawable(ѡ����)�����÷�
+      Drawable子类(一)--StateListDrawable(选择器)基本用法
     </h1>
   
 
@@ -187,7 +187,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>�ܶ�ʱ�������ڿ���ʱ��������Button��TextView���ò�ͬ״̬�µı�������������ɫ��ͨ����������������������뵽��<br>����дһ��Selector���ǵģ�дһ��selector�Ǻܷ��㣬����ͬ������ʽ�����Ը��á�����������Ҫ���ܵ�����ôʹ�ô������ʽ��<br>����ѡ������Ҳ���ǽ�����Ҫ����StateListDrawableʹ�á�<br><a id="more"></a>  </p>
+        <p>很多时候我们在开发时会遇到给Button、TextView设置不同状态下的背景或者字体颜色。通常遇到这种情况我们首先想到的<br>就是写一个Selector。是的，写一个selector是很方便，遇到同样的样式还可以复用。不过这里我要介绍的是怎么使用代码的形式来<br>设置选择器，也就是接下来要讲的StateListDrawable使用。<br><a id="more"></a>  </p>
 
       
 
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">ѡ����</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">选择器</a>
         </li>
       
 		</ul>
@@ -432,7 +432,15 @@ var cloudTieConfig = {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">ѡ����</a>
+                <a href="javascript:void(0)" class="color4">选择器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">JNI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,14 +453,6 @@ var cloudTieConfig = {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">binray</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">JNI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
